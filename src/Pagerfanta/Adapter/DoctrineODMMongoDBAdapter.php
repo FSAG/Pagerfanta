@@ -59,6 +59,7 @@ class DoctrineODMMongoDBAdapter implements AdapterInterface
     public function getSlice($offset, $length)
     {
         return $this->queryBuilder
+            ->find()
             ->limit($length)
             ->skip($offset)
             ->getQuery()
